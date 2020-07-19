@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(#0a3164, #091930);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+.screen-check {
+  display: none;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  transition: height 1s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.img-wrapper,
+.message-container,
+.message-photo {
+  width: 70%;
+  margin: auto;
+}
+
+.img-wrapper img {
+  margin-top: 10%;
+}
+
+.message-photo {
+  position: relative;
+}
+
+.message-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  animation: clickToContinue 1s ease-in 1s forwards;
+}
+
+.message-overlay p {
+  width: 50%;
+}
+
+@keyframes clickToContinue {
+  from {
+    opacity: 0;
+    pointer-events: none;
+  }
+  to {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+@media (min-width: 768px) {
+  .screen-check {
+    display: block;
+    height: 100vh;
+    width: 100%;
+  }
+}
